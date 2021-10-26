@@ -1,1 +1,1 @@
-# Programacion6Sys1.0
+# Programacion6Sys
