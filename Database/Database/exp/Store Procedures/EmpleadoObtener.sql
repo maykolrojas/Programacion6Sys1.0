@@ -9,8 +9,10 @@ AS BEGIN
      E.PrimerApellido,
      E.SegundoApellido,
      E.Edad,
-     E.FechaNacimiento    
-    FROM EXP.Empleado E
+     E.FechaNacimiento,
+     E.TipoIdentificacion,
+     E.Identificacion
+    FROM exp.Empleado E
     WHERE
     (@IdEmpleado IS NULL OR IdEmpleado=@IdEmpleado)
 

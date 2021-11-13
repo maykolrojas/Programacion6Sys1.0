@@ -4,8 +4,9 @@
 	@PrimerApellido varchar(50),
 	@SegundoApellido varchar(50),
 	@Edad int, 
-	@FechaNacimiento Datetime
-
+	@FechaNacimiento Datetime,
+	@TipoIdentificacion varchar(50),
+	@Identificacion varchar(250)
 
 AS BEGIN
 SET NOCOUNT ON
@@ -14,12 +15,16 @@ SET NOCOUNT ON
 
     BEGIN TRY
 	
-	UPDATE exp.Empleado SET
+	UPDATE EXP.Empleado SET
 	Nombre= @Nombre,
 	 PrimerApellido=@PrimerApellido,
 	 SegundoApellido=@SegundoApellido,
 	 Edad= @Edad,
-	 FechaNacimiento=@FechaNacimiento
+	 FechaNacimiento=@FechaNacimiento,
+	 TipoIdentificacion=@TipoIdentificacion,
+	 Identificacion=@Identificacion
+
+
 	WHERE 
 	       IdEmpleado=@IdEmpleado
 	

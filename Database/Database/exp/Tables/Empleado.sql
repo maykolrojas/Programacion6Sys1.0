@@ -6,6 +6,8 @@
   , SegundoApellido VARCHAR(50) NOT NULL
   , Edad INT NOT NULL
   , FechaNacimiento DATETIME NOT NULL
+  , TipoIdentificacion VARCHAR (50) NOT NULL
+  , Identificacion VARCHAR (250) NOT NULL
 )
 WITH (DATA_COMPRESSION = PAGE)
 GO
