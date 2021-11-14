@@ -1,10 +1,10 @@
 ﻿CREATE PROCEDURE [exp].[EmpleadoInsertar]
+	@IdTipoIdentificacion int,	
+	@Identificacion varchar(50),
 	@Nombre varchar(50),
 	@PrimerApellido varchar(50),
 	@SegundoApellido varchar(50),
 	@Edad int, 
-	@TipoIdentificacion varchar(50),
-	@Identificacion varchar(250),
 	@FechaNacimiento Datetime
 
 AS BEGIN
@@ -15,23 +15,22 @@ SET NOCOUNT ON
     BEGIN TRY
 	
 	INSERT INTO exp.Empleado
-	(Nombre,
+	(IdTipoIdentificacion,
+	 Identificacion,
+	 Nombre,
 	 PrimerApellido,
 	 SegundoApellido,
 	 Edad,
-	 TipoIdentificacion,
-	 Identificacion,
 	 FechaNacimiento
-
 	)
 	VALUES
 	(
+	@IdTipoIdentificacion,
+	@Identificacion,
 	@Nombre,
 	@PrimerApellido,
 	@SegundoApellido,
 	@Edad,
-	@TipoIdentificacion,
-	@Identificacion,
 	@FechaNacimiento
 	)
 

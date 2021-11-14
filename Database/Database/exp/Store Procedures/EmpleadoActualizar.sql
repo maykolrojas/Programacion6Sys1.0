@@ -1,12 +1,13 @@
 ﻿CREATE PROCEDURE [EXP].[EmpleadoActualizar]
     @IdEmpleado int,
+	@IdTipoIdentificacion int,
+	@Identificacion varchar(50),
 	@Nombre varchar(50),
 	@PrimerApellido varchar(50),
 	@SegundoApellido varchar(50),
 	@Edad int, 
-	@FechaNacimiento Datetime,
-	@TipoIdentificacion varchar(50),
-	@Identificacion varchar(250)
+	@FechaNacimiento Datetime
+
 
 AS BEGIN
 SET NOCOUNT ON
@@ -15,16 +16,14 @@ SET NOCOUNT ON
 
     BEGIN TRY
 	
-	UPDATE EXP.Empleado SET
-	Nombre= @Nombre,
+	UPDATE exp.Empleado SET
+	 IdTipoIdentificacion= @IdTipoIdentificacion,
+	 Identificacion= @Identificacion,
+	 Nombre= @Nombre,
 	 PrimerApellido=@PrimerApellido,
 	 SegundoApellido=@SegundoApellido,
 	 Edad= @Edad,
-	 FechaNacimiento=@FechaNacimiento,
-	 TipoIdentificacion=@TipoIdentificacion,
-	 Identificacion=@Identificacion
-
-
+	 FechaNacimiento=@FechaNacimiento
 	WHERE 
 	       IdEmpleado=@IdEmpleado
 	
